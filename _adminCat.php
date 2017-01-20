@@ -16,7 +16,7 @@ $categorie = $pdo->query("SELECT * FROM categorie")->fetchAll();
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <!--<script src="ajax/chglist.js"></script>-->
+    <?php include '_javascripts_et_css.php'; ?>
 </head>
 <body>   
 
@@ -25,7 +25,7 @@ $categorie = $pdo->query("SELECT * FROM categorie")->fetchAll();
 
 
 <div class="container">
-  <h2>Ajout/suppression de catégorie</h2>
+  <h2>Ajout/suppression de catégories</h2>
   <form  class="form-horizontal" id="ajoutCat" action="_adminCatAjout.php" method="POST">   
        
         <!--  Champ d'ajout de catégorie -->  
@@ -68,7 +68,7 @@ $categorie = $pdo->query("SELECT * FROM categorie")->fetchAll();
             </th>
             <th>  
             
-                <?php echo $cat["nom"];?>
+                <?php echo $cat["intitule"];?>
             </th> 
                 
             <th>                   	

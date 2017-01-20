@@ -21,7 +21,9 @@ $(document).ready(function () {
 
     function callbackFilter(result) {
         if (result == 'ok') {
+            alert('login ok');
             document.location = "index.php";
+            return;
         }
     }
 });

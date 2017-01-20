@@ -47,7 +47,7 @@ $cat = $pdo->query("SELECT * FROM  categorie")->fetchAll();
 
 
         <div class="container">
-            <h2>Ajout/suppression/mlodification de produits</h2>
+            <h2>Recherche de produits</h2>
 
 
             <form  class="form-horizontal" id="RechCli" >   
@@ -94,6 +94,7 @@ $cat = $pdo->query("SELECT * FROM  categorie")->fetchAll();
                         <th>Catégorie</th>
                         <th>Description</th>
                         <th>Prix</th>
+                        <th>Panier</th>
                     </tr>
                 </thead>
                 <tbody id="zone-resultat">

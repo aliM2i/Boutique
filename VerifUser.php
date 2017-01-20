@@ -18,7 +18,8 @@ if (sizeof($result) > 0) {
     echo "ok";
 } else
     echo "ko";
- include 'index.php';
+
+ //include 'index.php';
 
 
 //print_r($_GET);   

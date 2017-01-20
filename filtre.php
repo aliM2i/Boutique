@@ -27,8 +27,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 
 // Execute request SQL
 $prod = $pdo->query($sql)->fetchAll();
-
-foreach ($prod as $p) {
+s
     ?>
 
     <tr>
@@ -36,7 +35,8 @@ foreach ($prod as $p) {
         <td><?php echo $p["nom"]; ?></td>
         <td><?php echo $p["intitule"]; ?></td>
         <td><?php echo $p["description"]; ?></td>
-        <td><?php echo $p["prix"]; ?></td>
+        <td><?php echo $p["prix"]; ?></td>       
+        <td><a href="ajoutePanier.php?id=<?php echo $p["id"];?>">Ajouter au panier</a></td>
     </tr>
 
     <?php
