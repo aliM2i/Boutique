@@ -1,0 +1,52 @@
+CREATE TABLE produit (
+    id BIGINT NOT NULL  AUTO_INCREMENT, 
+    id_cat BIGINT NOT NULL,  
+    nom VARCHAR(50) NOT NULL, 
+    description VARCHAR(50) NOT NULL,
+    prix real NOT NULL,
+    FOREIGN KEY (id_cat) REFERENCES categorie(id),
+    PRIMARY KEY (id)
+
+) 
+CREATE TABLE categorie (
+    id BIGINT NOT NULL  AUTO_INCREMENT, 
+    nom VARCHAR(50) NOT NULL, 
+    PRIMARY KEY (id)
+) 
+
+CREATE TABLE client (
+    id BIGINT NOT NULL  AUTO_INCREMENT, 
+    nom VARCHAR(50) NOT NULL,  
+    prenom VARCHAR(50) NOT NULL,
+    sexe VARCHAR(1) NOT NULL,
+    email VARCHAR(50) NOT NULL,
+    tel VARCHAR(20) NOT NULL,
+    pseudo VARCHAR(20) NOT NULL,
+    mdp VARCHAR(20) NOT NULL,
+    num_voie VARCHAR(50) NOT NULL,
+    CP VARCHAR(10) NOT NULL,
+    ville VARCHAR(50) NOT NULL,
+    pays VARCHAR(50) NOT NULL,
+    PRIMARY KEY (id)
+
+) 
+CREATE TABLE commande (
+    id BIGINT NOT NULL  AUTO_INCREMENT, 
+    id_lig_cde BIGINT NOT NULL,  
+    id_client BIGINT NOT NULL, 
+    statut VARCHAR(20) NOT NULL,
+    date_cde datetime NOT NULL,
+    FOREIGN KEY (id_client) REFERENCES client(id),
+    PRIMARY KEY (id)
+
+) 
+CREATE TABLE lig_cde (
+    id BIGINT NOT NULL  AUTO_INCREMENT, 
+    id_cde BIGINT NOT NULL,  
+    id_produit BIGINT NOT NULL,  
+    qte int NOT NULL,
+    prix REAL NOT NULL,
+    FOREIGN KEY (id_cde) REFERENCES commande(id),
+    PRIMARY KEY (id)
+
+) 
