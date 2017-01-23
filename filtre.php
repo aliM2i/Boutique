@@ -27,19 +27,24 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 
 // Execute request SQL
 $prod = $pdo->query($sql)->fetchAll();
-s
-    ?>
 
-    <tr>
-        <td><?php echo $p["id"]; ?></td>
-        <td><?php echo $p["nom"]; ?></td>
-        <td><?php echo $p["intitule"]; ?></td>
-        <td><?php echo $p["description"]; ?></td>
-        <td><?php echo $p["prix"]; ?></td>       
-        <td><a href="ajoutePanier.php?id=<?php echo $p["id"];?>">Ajouter au panier</a></td>
-    </tr>
 
-    <?php
-}
+                    foreach ($prod as $p)
+                    {
 ?>
+                        <tr>
+                            <td><?php echo $p["id"];?></td>
+                            <td><?php echo $p["nom"];?></td>
+                            <td><?php echo $p["intitule"];?></td>
+                            <td><?php echo $p["description"];?></td>
+                            <td><?php echo $p["prix"];?></td>       
+                            <td><a href="ajoutPanier.php?id=<?php echo $p["id"];?>">Ajouter au panier</a></td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
 
+    
+    
+
+    
